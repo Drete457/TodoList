@@ -1,0 +1,8 @@
+.complete{
+    text-decoration: line-through;
+    text-size-adjust: 100px;
+}
+
+.incomplete{
+    text-decoration: none;
+}

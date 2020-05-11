@@ -1,9 +1,10 @@
 import React from "react";
 
 export default class TodoFom extends React.Component {
+  
   state = {
     text: "",
-    id: 0,
+    id: 1,
   };
 
   pressEvent = (event) =>
