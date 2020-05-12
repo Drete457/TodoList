@@ -1,8 +1,7 @@
 import React from "react";
-import Todo from "./Todo";
-import TodoForm from "./TodoForm";
-import { FilterN, FilterP } from "../Functions/Filter";
-import {addTodo, toggleComplete, updateTodoToShow, onDelete} from "../Functions/Functions";
+import Todo from "./todo";
+import TodoForm from "./todo-form";
+import {addTodo, toggleComplete, updateTodoToShow, onDelete} from "../Functions/functions";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
@@ -17,14 +16,14 @@ export default class TodoList extends React.Component {
 
     if (this.state.todoToShow === "all") {
       todos = this.state.todo;
-    } else if (this.state.todoToShow === "Incomplete") {
-      todos = this.state.todo.filter(FilterN);
-    } else if (this.state.todoToShow === "Complete") {
-      todos = this.state.todo.filter(FilterP);
+    } else if (this.state.todoToShow === "incomplete") {
+      todos = this.state.todo.filter((todo) => !todo.complete);
+    } else if (this.state.todoToShow === "complete") {
+      todos = this.state.todo.filter((todo) => todo.complete);
     }
 
     return (
-      <div className="MainBody">
+      <div className="mainBody">
         <h1>To-Do List</h1>
         <TodoForm
           onSubmit={(todo) =>
@@ -35,8 +34,8 @@ export default class TodoList extends React.Component {
         <Tabs>
           <TabList>
             <Tab onClick={() => this.setState({ todoToShow: updateTodoToShow("all")})}>All</Tab>
-            <Tab onClick={() => this.setState({ todoToShow: updateTodoToShow("Incomplete")})}>Incomplete</Tab>
-            <Tab onClick={() => this.setState({ todoToShow: updateTodoToShow("Complete") })}>Complete</Tab>
+            <Tab onClick={() => this.setState({ todoToShow: updateTodoToShow("incomplete")})}>Incomplete</Tab>
+            <Tab onClick={() => this.setState({ todoToShow: updateTodoToShow("complete") })}>Complete</Tab>
          </TabList>
          <TabPanel>
            <h2>All To-Do</h2>
@@ -62,7 +61,8 @@ export default class TodoList extends React.Component {
           />
         ))}
         <div className="todoincomplete">
-          To-Do Incomplete: {this.state.todo.filter(FilterN).length}
+          <p></p>
+          To-Do Incomplete: {this.state.todo.filter((todo) => !todo.complete).length}
         </div>
       </div>
     );
