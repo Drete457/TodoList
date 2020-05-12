@@ -1,9 +1,14 @@
 import React from "react";
 import Todo from "./todo";
 import TodoForm from "./todo-form";
-import {AddTodo, ToggleComplete, UpdateTodoToShow, OnDelete} from "../Functions/functions";
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
+import {
+  AddTodo,
+  ToggleComplete,
+  UpdateTodoToShow,
+  OnDelete,
+} from "../Functions/functions";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
 
 export default class TodoList extends React.Component {
   state = {
@@ -31,22 +36,40 @@ export default class TodoList extends React.Component {
           }
         />
         <div className="separators">
-        <Tabs>
-          <TabList>
-            <Tab onClick={() => this.setState({ todoToShow: UpdateTodoToShow("all")})}>All</Tab>
-            <Tab onClick={() => this.setState({ todoToShow: UpdateTodoToShow("incomplete")})}>Incomplete</Tab>
-            <Tab onClick={() => this.setState({ todoToShow: UpdateTodoToShow("complete") })}>Complete</Tab>
-         </TabList>
-         <TabPanel>
-           <h2>All To-Do</h2>
-         </TabPanel>
-         <TabPanel>
-           <h2>To-Do Incomplete</h2>
-          </TabPanel>
-          <TabPanel>
-           <h2>To-Do Complete</h2>
-          </TabPanel>
-        </Tabs>
+          <Tabs>
+            <TabList>
+              <Tab
+                onClick={() =>
+                  this.setState({ todoToShow: UpdateTodoToShow("all") })
+                }
+              >
+                All
+              </Tab>
+              <Tab
+                onClick={() =>
+                  this.setState({ todoToShow: UpdateTodoToShow("incomplete") })
+                }
+              >
+                Incomplete
+              </Tab>
+              <Tab
+                onClick={() =>
+                  this.setState({ todoToShow: UpdateTodoToShow("complete") })
+                }
+              >
+                Complete
+              </Tab>
+            </TabList>
+            <TabPanel>
+              <h2>All To-Do</h2>
+            </TabPanel>
+            <TabPanel>
+              <h2>To-Do Incomplete</h2>
+            </TabPanel>
+            <TabPanel>
+              <h2>To-Do Complete</h2>
+            </TabPanel>
+          </Tabs>
         </div>
         {todos.map((todo) => (
           <Todo
@@ -62,7 +85,8 @@ export default class TodoList extends React.Component {
         ))}
         <div className="todoincomplete">
           <p></p>
-          To-Do Incomplete: {this.state.todo.filter((todo) => !todo.complete).length}
+          To-Do Incomplete:{" "}
+          {this.state.todo.filter((todo) => !todo.complete).length}
         </div>
       </div>
     );
