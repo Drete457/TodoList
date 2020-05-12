@@ -14,16 +14,16 @@ export default class TodoFom extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    if(this.state.text !== ""){
-    this.props.onSubmit({
-      id: this.state.id,
-      text: this.state.text,
-      complete: false,
-    });
-    this.setState({ 
-      text: "",
-      id: this.state.id + 1,
-    });
+    if (this.state.text !== "") {
+      this.props.onSubmit({
+        id: this.state.id,
+        text: this.state.text,
+        complete: false,
+      });
+      this.setState({
+        text: "",
+        id: this.state.id + 1,
+      });
     }
   };
 
@@ -33,7 +33,7 @@ export default class TodoFom extends React.Component {
         <input
           name="text"
           placeholder="What do you want to do?"
-          value={this.state.text} 
+          value={this.state.text}
           onChange={this.pressEvent}
         />
         <button onClick={this.handleSubmit}>Add</button>

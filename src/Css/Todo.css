@@ -4,21 +4,26 @@
     padding: 1px;
     font-size: 35px;
     border-radius: 50px;
+    height: 45px;
+    position: relative;
 }
 
 .id {
-    padding-left: 30px;
+    position: absolute;
+    left: 1%;
 }
 
 .text {
-    padding-left: 30px;
+    position: absolute;
+    left: 5%;
 }
 
 .deleteicon {
     width: 100%;
-    max-width: 35px;
-    padding-right: 40px;
-    padding-left: 40px;
+    max-width: 45px;
+    position: absolute;
+    right: 4%;
+    bottom: 2%;
 }
 
 .complete, .incomplete {
@@ -27,8 +32,10 @@
     font-size: 20px;
     border-radius: 50px;  
     height: 25px;
-    width: 110px;
-    margin: 7px;
+    width: 120px;
+    position: absolute;
+    right: 15%;
+    top: 22%;
 }
 
 .incomplete {
