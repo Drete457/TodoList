@@ -27,7 +27,7 @@ export default class TodoFom extends React.Component {
 
   render() {
     return (
-      <form>
+      <form className="addtodo">
         <input
           name="text"
           placeholder="What do you want to do?"

@@ -1,8 +1,13 @@
-.complete{
+.complete {
     text-decoration: line-through;
     text-size-adjust: 100px;
 }
 
-.incomplete{
+.incomplete {
     text-decoration: none;
+}
+
+.todo {
+    display: flex;
+    justify-content: center;
 }

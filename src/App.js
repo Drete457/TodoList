@@ -7,7 +7,7 @@ class App extends Component {
     count: 0
   };
 
-  increment = () => {
+  /*increment = () => {
     this.setState({
       count: this.state.count + 1
     });
@@ -17,7 +17,7 @@ class App extends Component {
     this.setState({
       count: this.state.count -1
     });
-  };
+  };*/
 
   render() {
     return (

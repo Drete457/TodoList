@@ -1,1 +1,0 @@
-export function (todo) => !todo.complete;
