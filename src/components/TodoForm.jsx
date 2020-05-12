@@ -14,6 +14,7 @@ export default class TodoFom extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    if(this.state.text !== ""){
     this.props.onSubmit({
       id: this.state.id,
       text: this.state.text,
@@ -23,6 +24,7 @@ export default class TodoFom extends React.Component {
       text: "",
       id: this.state.id + 1,
     });
+    }
   };
 
   render() {
@@ -31,7 +33,7 @@ export default class TodoFom extends React.Component {
         <input
           name="text"
           placeholder="What do you want to do?"
-          value={this.state.text}
+          value={this.state.text} 
           onChange={this.pressEvent}
         />
         <button onClick={this.handleSubmit}>Add</button>

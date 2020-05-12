@@ -1,16 +1,37 @@
-.complete {
-    text-decoration: line-through;
-    text-size-adjust: 100px;
+.todo { 
+    border-style: dotted;
+    background-color: ghostwhite;
+    padding: 1px;
+    font-size: 35px;
+    border-radius: 50px;
+}
+
+.id {
+    padding-left: 30px;
+}
+
+.text {
+    padding-left: 30px;
+}
+
+.deleteicon {
+    width: 100%;
+    max-width: 35px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+.complete, .incomplete {
+    background-color: red; 
+    border-style: initial; 
+    font-size: 20px;
+    border-radius: 50px;  
+    height: 25px;
+    width: 110px;
+    margin: 7px;
 }
 
 .incomplete {
-    text-decoration: none;
+    background-color: blueviolet;
 }
 
-.todo {
-    display: flex;
-    border-style: dotted;
-    justify-content: center;
-    background-color: ghostwhite;
-    padding: 1px;
-}

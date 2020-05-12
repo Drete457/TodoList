@@ -9,7 +9,7 @@ import 'react-tabs/style/react-tabs.css';
 export default class TodoList extends React.Component {
   state = {
     todo: [{
-      id: 1,
+      id: 0,
       text: "teste",
       complete: false,
     }],
