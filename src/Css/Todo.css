@@ -9,5 +9,8 @@
 
 .todo {
     display: flex;
+    border-style: dotted;
     justify-content: center;
+    background-color: ghostwhite;
+    padding: 1px;
 }
