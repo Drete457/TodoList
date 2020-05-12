@@ -1,9 +1,9 @@
 
-export function addTodo(todo, props) {
+export function AddTodo(todo, props) {
   return [todo, ...props];
 }
 
-export function toggleComplete(todos, id) {
+export function ToggleComplete(todos, id) {
   let todo = [];
 
   todo = todos.map((todo) => {
@@ -20,11 +20,10 @@ export function toggleComplete(todos, id) {
   return todo;
 }
 
-export function updateTodoToShow(choose) {
+export function UpdateTodoToShow(choose) {
   return choose;
 }
 
-export function onDelete(todos, id) {
-
+export function OnDelete(todos, id) {
   return todos.filter((todo) => todo.id !== id);
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import Todo from "./todo";
 import TodoForm from "./todo-form";
-import {addTodo, toggleComplete, updateTodoToShow, onDelete} from "../Functions/functions";
+import {AddTodo, ToggleComplete, UpdateTodoToShow, OnDelete} from "../Functions/functions";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
@@ -27,15 +27,15 @@ export default class TodoList extends React.Component {
         <h1>To-Do List</h1>
         <TodoForm
           onSubmit={(todo) =>
-            this.setState({ todo: addTodo(todo, this.state.todo) })
+            this.setState({ todo: AddTodo(todo, this.state.todo) })
           }
         />
         <div className="separators">
         <Tabs>
           <TabList>
-            <Tab onClick={() => this.setState({ todoToShow: updateTodoToShow("all")})}>All</Tab>
-            <Tab onClick={() => this.setState({ todoToShow: updateTodoToShow("incomplete")})}>Incomplete</Tab>
-            <Tab onClick={() => this.setState({ todoToShow: updateTodoToShow("complete") })}>Complete</Tab>
+            <Tab onClick={() => this.setState({ todoToShow: UpdateTodoToShow("all")})}>All</Tab>
+            <Tab onClick={() => this.setState({ todoToShow: UpdateTodoToShow("incomplete")})}>Incomplete</Tab>
+            <Tab onClick={() => this.setState({ todoToShow: UpdateTodoToShow("complete") })}>Complete</Tab>
          </TabList>
          <TabPanel>
            <h2>All To-Do</h2>
@@ -53,10 +53,10 @@ export default class TodoList extends React.Component {
             key={todo.id}
             todo={todo}
             toggleComplete={() =>
-              this.setState({ todo: toggleComplete(this.state.todo, todo.id) })
+              this.setState({ todo: ToggleComplete(this.state.todo, todo.id) })
             }
             onDelete={() =>
-              this.setState({ todo: onDelete(this.state.todo, todo.id) })
+              this.setState({ todo: OnDelete(this.state.todo, todo.id) })
             }
           />
         ))}
