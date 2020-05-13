@@ -34,7 +34,7 @@ export default class TodoList extends React.Component {
           onSubmit={(todo) =>
             this.setState({ todo: AddTodo(todo, this.state.todo) })
           }
-        />
+        /> 
         <div className="separators">
           <Tabs>
             <TabList>
