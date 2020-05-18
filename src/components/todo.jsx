@@ -11,8 +11,8 @@ export default ({ todo, toggleComplete, onDelete }) => (
         {!todo.complete ? "incomplete" : "complete"}
       </div>
     </div>
-    <div className="deleteicon" onClick={onDelete}>
-      <img src={trash} className="deleteiconimage" alt="deleteicon" />
+    <div onClick={onDelete}>
+      <img src={trash} className="deleteicon" alt="deleteicon" />
     </div>
   </div>
 );
