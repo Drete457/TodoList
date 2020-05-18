@@ -4,7 +4,7 @@ import trash from "../Resources/Icons/trash.png";
 
 export default ({ todo, toggleComplete, onDelete }) => (
   <div key={todo.id} className="todo">
-    <div className="tododisplay" onClick={toggleComplete}>
+    <div className="tododisplaynpm" onClick={toggleComplete}>
       <div className="id">{todo.id}</div>
       <div className="text">{todo.text}</div>
       <div className={!todo.complete ? "incomplete" : "complete"}>
